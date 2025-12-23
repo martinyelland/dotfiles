@@ -245,6 +245,8 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 
+
+
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -257,3 +259,6 @@ if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
 
+# Aliases
+alias updatecheck='dnf check-update -q | awk '\''NF==3 {split($1,a,"."); print a[1]}'\'' | xargs -I{} bash -c '\''echo "{}: $(rpm -q {} --qf "%{VERSION}-%{RELEASE}") -> $(dnf repoquery -q {} --qf "%{VERSION}-%{RELEASE}")"'\'''
+alias checkupdate='dnf check-update -q | awk '\''NF==3 {split($1,a,"."); print a[1]}'\'' | xargs -I{} bash -c '\''echo "{}: $(rpm -q {} --qf "%{VERSION}-%{RELEASE}") -> $(dnf repoquery -q {} --qf "%{VERSION}-%{RELEASE}")"'\'''
