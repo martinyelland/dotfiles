@@ -8,3 +8,4 @@ alias tron-online='ssh sshtron.zachlatta.com ; clear'
 alias glog='git log --oneline --graph --color --all --decorate'
 alias updatecheck='dnf check-update -q | awk '\''NF==3 {split($1,a,"."); print a[1]}'\'' | xargs -I{} bash -c '\''echo "{}: $(rpm -q {} --qf "%{VERSION}-%{RELEASE}") -> $(dnf repoquery -q {} --qf "%{VERSION}-%{RELEASE}")"'\'''
 alias checkupdate='dnf check-update -q | awk '\''NF==3 {split($1,a,"."); print a[1]}'\'' | xargs -I{} bash -c '\''echo "{}: $(rpm -q {} --qf "%{VERSION}-%{RELEASE}") -> $(dnf repoquery -q {} --qf "%{VERSION}-%{RELEASE}")"'\'''
+alias tmux=byobu
