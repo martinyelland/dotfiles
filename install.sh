@@ -10,7 +10,7 @@ for file in $(find . -maxdepth 1 -name ".*" -type f  -printf "%f\n" ); do
 done
 
 # Packages to install
-PACKAGES="vim-scripts zsh zsh-syntax-highlighting zsh-autosuggestions tmux htop"
+PACKAGES="vim-scripts zsh zsh-syntax-highlighting zsh-autosuggestions tmux byobu htop"
 
 # Detect package manager and install packages
 install_packages() {
